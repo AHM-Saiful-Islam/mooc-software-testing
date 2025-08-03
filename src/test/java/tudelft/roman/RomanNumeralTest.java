@@ -33,4 +33,26 @@ public class RomanNumeralTest {
         int result = roman.convert("XLIV");
         Assertions.assertEquals(44, result);
     }
+
+     @Test
+    public void numberWithComplexDigits() {
+        RomanNumeral roman = new RomanNumeral();
+        int result = roman.convert("XLIX");
+        Assertions.assertEquals(49, result);
+    }
+
+    @Test
+    public void numberWithWrongDigits() {
+        RomanNumeral roman = new RomanNumeral();
+        int result = roman.convert("LVIII");
+        Assertions.assertNotEquals(22, result);
+    }
+
+    // IIII is invalid input. but it's giving correct result
+    @Test
+    public void numberWithInvalidDigits() {
+        RomanNumeral roman = new RomanNumeral();
+        int result = roman.convert("IIII");
+        Assertions.assertNotEquals(4, result);
+    }
 }
