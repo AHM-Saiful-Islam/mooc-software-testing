@@ -51,21 +51,21 @@ public class RomanNumeralTestWithBeforeEach {
         Assertions.assertNotEquals(11, result);
     }
 
-    // VV is invalid input. but it's giving correct result
+    // VV is invalid input. but it's giving correct result. new test case
     @Test
     public void numberWithInvalidDigits() {
         int result = roman.convert("VV");
         Assertions.assertNotEquals(10, result);
     }
 
-    // IC is invalid input. but it's giving correct result
+    // IC is invalid input. but it's giving correct result. new test case
     @Test
     public void numberWithInvalidDigits2() {
         int result = roman.convert("IC");
         Assertions.assertNotEquals(99, result);
     }
 
-    // IL is invalid input. but it's giving correct result
+    // IL is invalid input. but it's giving correct result. new test case
     @Test
     public void numberWithInvalidDigits3() {
         int result = roman.convert("IL");
