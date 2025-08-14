@@ -1,3 +1,14 @@
+// problem statement: A Caesar Cipher is a simple way to encrypt messages.
+// There are two inputs: A message and a shift. The message can be any string containing lower case letters
+// and spaces, any other characters will return 'invalid' The shift can be any positive or negative integer.
+// Each letter of the message is then shifted by the specified amount
+// (if shift is '3' then 'abc' becomes 'def' and 'xyz' becomes 'abc').
+
+// Bug Detected
+// Space is also considered as invalid input in the program
+// but in requirement space was allowed input
+
+
 package tudelft.caesarshift;
 
 public class CaesarShiftCipher {
@@ -7,12 +18,13 @@ public class CaesarShiftCipher {
         char currentChar;
         int length = message.length();
 
-        shift = shift%26;
+        shift = shift % 26;
 
         for(int i = 0; i < length; i++){
             currentChar = message.charAt(i);
-           
-            sb.append(currentChar);
+
+            // Bug detected
+            //sb.append(currentChar); this append adds input as it is.
             if (currentChar > 'z' || currentChar < 'a') {
                 return "invalid";
             } else if ((char) (currentChar + shift) > 'z') {
